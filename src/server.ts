@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import connectDB from "./config/database";
 import storeRouter from "./routes/storeRoutes";
+import logger from "./logger";
 
 
 dotenv.config();
@@ -16,5 +17,5 @@ app.use("/api", storeRouter);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
+  logger.info(`Servidor iniciado na porta ${PORT}`);
 });
